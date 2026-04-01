@@ -206,7 +206,119 @@ function generate(){
  document.getElementById("output").textContent=code;
 }
 
-</script>
+</script> <script>
+function generate(){
+ let prompt=document.getElementById("prompt").value;
 
+ let code = `
+<!DOCTYPE html>
+<html>
+<head>
+<title>${prompt}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { margin:0; font-family: Arial; background:#0a0a0a; color:white; }
+nav { display:flex; justify-content:space-between; padding:20px; background:#111; }
+nav h1 { color:#00c3ff; }
+.hero { text-align:center; padding:100px 20px; }
+.btn { background:#00c3ff; color:black; padding:10px 20px; border-radius:5px; text-decoration:none; }
+section { padding:50px; text-align:center; }
+footer { background:#111; padding:20px; text-align:center; }
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>${prompt}</h1>
+</nav>
+
+<div class="hero">
+<h1>Welcome to ${prompt}</h1>
+<p>Your modern website powered by AI 🚀</p>
+<a href="#" class="btn">Get Started</a>
+</div>
+
+<section>
+<h2>Our Services</h2>
+<p>We provide high quality solutions for your business.</p>
+</section>
+
+<footer>
+<p>© ${prompt} 2026</p>
+</footer>
+
+</body>
+</html>
+`;
+
+ // Show preview
+ document.getElementById("output").textContent = code;
+
+ // Download file
+ let blob = new Blob([code], { type: "text/html" });
+ let link = document.createElement("a");
+
+ link.href = URL.createObjectURL(blob);
+ link.download = "generated-site.html";
+ link.click();
+}
+</script> <!-- YOUR GENERATOR SCRIPT -->
+<script>
+function generate(){
+ let prompt=document.getElementById("prompt").value;
+
+ let code = `
+<!DOCTYPE html>
+<html>
+<head>
+<title>${prompt}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { margin:0; font-family: Arial; background:#0a0a0a; color:white; }
+nav { display:flex; justify-content:space-between; padding:20px; background:#111; }
+nav h1 { color:#00c3ff; }
+.hero { text-align:center; padding:100px 20px; }
+.btn { background:#00c3ff; color:black; padding:10px 20px; border-radius:5px; text-decoration:none; }
+section { padding:50px; text-align:center; }
+footer { background:#111; padding:20px; text-align:center; }
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>${prompt}</h1>
+</nav>
+
+<div class="hero">
+<h1>Welcome to ${prompt}</h1>
+<p>Your modern website powered by AI 🚀</p>
+<a href="#" class="btn">Get Started</a>
+</div>
+
+<section>
+<h2>Our Services</h2>
+<p>We provide high quality solutions for your business.</p>
+</section>
+
+<footer>
+<p>© ${prompt} 2026</p>
+</footer>
+
+</body>
+</html>
+`;
+
+ document.getElementById("output").textContent = code;
+
+ let blob = new Blob([code], { type: "text/html" });
+ let link = document.createElement("a");
+
+ link.href = URL.createObjectURL(blob);
+ link.download = "generated-site.html";
+ link.click();
+}
+</script>
 </body>
 </html>
